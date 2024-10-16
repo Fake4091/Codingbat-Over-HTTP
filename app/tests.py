@@ -15,3 +15,17 @@ class TestNear100(SimpleTestCase):
     def test_90_near_100(self):
         response = self.client.get("/near-100/90")
         self.assertContains(response, "True")
+
+
+class TestStringSplosion(SimpleTestCase):
+    def test_abc_string_splosion(self):
+        response = self.client.get("/string-splosion/abc")
+        self.assertContains(response, "aababc")
+
+    def test_code_string_splosion(self):
+        response = self.client.get("/string-splosion/Code")
+        self.assertContains(response, "CCoCodCode")
+
+    def test_ab_string_splosion(self):
+        response = self.client.get("/string-splosion/ab")
+        self.assertContains(response, "aab")
