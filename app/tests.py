@@ -29,3 +29,17 @@ class TestStringSplosion(SimpleTestCase):
     def test_ab_string_splosion(self):
         response = self.client.get("/string-splosion/ab")
         self.assertContains(response, "aab")
+
+
+class TestCatDog(SimpleTestCase):
+    def test_cat_dog(self):
+        response = self.client.get("/cat-dog/catdog")
+        self.assertContains(response, "True")
+
+    def test_catcat(self):
+        response = self.client.get("/cat-dog/catcat")
+        self.assertContains(response, "False")
+
+    def test_1cat1cadodog(self):
+        response = self.client.get("/cat-dog/1cat1cadodog")
+        self.assertContains(response, "True")

@@ -16,3 +16,9 @@ def string_splosion_view(request: HttpRequest, splode) -> HttpResponse:
         newString += splode[0 : i + 1]
 
     return HttpResponse(newString)
+
+
+def cat_dog_view(request: HttpRequest, word) -> HttpResponse:
+    if word.count("cat") == word.count("dog"):
+        return HttpResponse(True)
+    return HttpResponse(False)
