@@ -43,3 +43,17 @@ class TestCatDog(SimpleTestCase):
     def test_1cat1cadodog(self):
         response = self.client.get("/cat-dog/1cat1cadodog")
         self.assertContains(response, "True")
+
+
+class TestLoneSum(SimpleTestCase):
+    def test_3_2_3(self):
+        response = self.client.get("/lone-sum/3/2/3")
+        self.assertContains(response, "2")
+
+    def test_1_2_3(self):
+        response = self.client.get("/lone-sum/1/2/3")
+        self.assertContains(response, "6")
+
+    def test_3_3_3(self):
+        response = self.client.get("/lone-sum/3/3/3")
+        self.assertContains(response, "0")

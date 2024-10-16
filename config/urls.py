@@ -17,11 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from app.views import near_100_view, string_splosion_view, cat_dog_view
+from app.views import near_100_view, string_splosion_view, cat_dog_view, lone_sum_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("near-100/<int:n>", near_100_view),
     path("string-splosion/<str:splode>", string_splosion_view),
     path("cat-dog/<str:word>", cat_dog_view),
+    path("lone-sum/<int:a>/<int:b>/<int:c>", lone_sum_view),
 ]
